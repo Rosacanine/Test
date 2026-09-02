@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosacanine | Site officiel du groupe de Rock français</title>
+    <meta name="description" content="Site officiel de Rosacanine ! Groupe de rock français originaire de Toulouse. Découvrez notre EP 'D'un trait' et nos prochains concerts.">
+    
+    <!-- Preload image héros (LCP) -->
+    <link rel="preload" as="image" type="image/webp" href="images/photos/RC-photo-bio-new.webp">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://rosacanine.github.io">
+    
+    <!-- CSS -->
+    <link href="style/style.css" rel="stylesheet">
+    
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo/icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="theme-color" content="#000000">
+</head>
+
+<body>
+
+    <main>
+
+        <!-- ═══════════════ HERO / ACTU / BIO ═══════════════ -->
+        <section class="section-dark" id="actu">
+            <div class="wrap">
+                <div class="hero">
+                    <img src="images/logo/logo-rosacanine-ligne.svg" alt="Rosacanine" class="hero-logo">
+                    
+                    <div class="hero-grid">
+                        <div class="hero-media">
+                            <img src="images/photos/RC-photo-bio-new.webp" alt="Portrait du groupe Rosacanine en noir et blanc" class="hero-img">
+                        </div>
+                        <div class="hero-content">
+                            <div class="titre">BIOGRAPHIE</div>
+                            <p class="hero-subtitle">Rock chanté en français</p>
+                            
+                            <div class="social hero-social">
+                                <a href="https://www.facebook.com/RosaCanineOfficiel" target="_blank" rel="noopener noreferrer" title="Facebook">
+                                    <img src="images/logo/logo-fb.svg" alt="Facebook">
+                                </a>
+                                <a href="https://www.instagram.com/rosacanineofficiel" target="_blank" rel="noopener noreferrer" title="Instagram">
+                                    <img src="images/logo/logo-insta.svg" alt="Instagram">
+                                </a>
+                                <a href="https://www.youtube.com/@rosacanineofficiel" target="_blank" rel="noopener noreferrer" title="YouTube">
+                                    <img src="images/logo/logo-youtube.svg" alt="YouTube">
+                                </a>
+                            </div>
+
+                            <div class="bio-content">
+                                <p>
+                                    Rosa<span class="accent">C</span>anine éclot en mars 2023. Tirant son nom de cet arbuste épineux et rustique, 
+                                    cette rose-chien leur ressemble. Une bande son rock, dynamique et directe, en français dans le texte, 
+                                    qui caresse l'âme et pique au cœur.
+                                </p>
+                                <div class="bio-suite" id="bio-suite">
+                                    <p>
+                                        Cette bande aurait pu s'appeler « Les copains d'abord ». Originaire de Toulouse (Nord s'il vous plaît), 
+                                        les membres de ce généreux gang n'attendaient qu'une opportunité pour se retrouver. 
+                                        Biberonnés à la sauce rock de l'amérique fugazienne, les guitares sont autant rageuses que mélodieuses. 
+                                        La rythmique, ancrée, soutient cette voix habitée et ces mots qui vous embarquent. 
+                                        Des concerts qui se jouent comme s'il s'agissait du dernier. Les regards sont complices et l'énergie communicative.
+                                    </p>
+                                    <p>
+                                        Dès ses débuts, la scène s'impose comme une nécessité. 
+                                        La formation enchaîne les concerts tous terrains, des clubs aux festivals locaux jusqu'aux premières parties. 
+                                        Alors que 2024 s'achève en Vendée sur le Festival Bar-Bars (Zinor-Montaigu), 
+                                        l'année 2025 s'ouvre sur les 1ères parties de DEPORTIVO (Rex-Toulouse), 
+                                        Mouss et Akim (6MIC-Aix-En Provence) et le Off du Printemps de Bourges où le groupe fait un passage remarqué, 
+                                        notamment sur la scène Berry.
+                                    </p>
+                                    <p>
+                                        2026 annonce la sortie d'un nouvel EP.
+                                    </p>
+                                    <p>
+                                        Faire communion est primordial. Le rock a cette vertu et Rosa<span class="accent">C</span>anine l'incarne à merveille.
+                                    </p>
+                                </div>
+                                <button class="button-text" id="bio-toggle">Lire la suite ↓</button>
+                            </div>
+
+                    <!--    <div class="hero-cta">
+                                <a href="#musique" class="button">Écouter l'EP</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ═══════════════ MUSIQUE ═══════════════ -->
+        <section class="section-dark" id="musique">
+            <div class="wrap">
+                <div class="titre">Musique</div>
+                <div class="titre2">Nouvel EP "UNE PLACE" — 2026</div>
+                
+                <!-- PLAYER MP3 INTEGRÉ -->
+                <div class="player">
+                    <div class="player-left">
+                        <div class="cover">
+                            <img src="https://rosacanine.github.io/data/images/photos/RC-pochette-2em.png" alt="Pochette EP Une Place - Rosacanine">
+                        </div>
+                        <audio id="audioPlayer" controls>
+                            <source id="audioSource" src="https://rosacanine.github.io/data/music/REPONDS MOI.mp3" type="audio/mpeg">
+                            Votre navigateur ne supporte pas l'audio HTML5.
+                        </audio>
+                    </div>
+
+                    <div class="player-right">
+                        <ul class="tracklist" id="trackList">
+                            <li class="active" data-src="https://rosacanine.github.io/data/music/REPONDS MOI.mp3"><em>01</em> - Réponds-moi</li>
+                            <li data-src="https://rosacanine.github.io/data/music/DES YEUX.mp3"><em>02</em> - Des yeux</li>
+                            <li data-src="https://rosacanine.github.io/data/music/LE JOUR D'APRES.mp3"><em>03</em> - Le jour d'après</li>
+                            <li data-src="https://rosacanine.github.io/data/music/LEVE LA TETE.mp3"><em>04</em> - Lève la tête</li>
+                            <li data-src="https://rosacanine.github.io/data/music/UNE PLACE.mp3"><em>05</em> - Une place</li>
+                            <li data-src="https://rosacanine.github.io/data/music/A TA MEMOIRE.mp3"><em>06</em> - A ta mémoire</li>
+                        </ul>
+                    </div>
+                </div>
+
+        <!--        <div class="album-buttons">
+                    <a href="https://rosacanine.bandcamp.com/merch" target="_blank" rel="noopener noreferrer" class="button button-outline">Commander L'EP</a>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- ═══════════════ VIDÉOS ═══════════════ -->
+        <section class="section-alt" id="videos">
+            <div class="wrap">
+                <div class="titre">Vidéos</div>
+                <div class="video-wrap">
+                    <div class="video-main">
+                        <div class="youtube-facade" data-id="Na1gVEAh3AE">
+                            <img src="https://i.ytimg.com/vi/Na1gVEAh3AE/hqdefault.jpg" 
+                                 alt="Teaser Rosacanine — Cliquez pour lire la vidéo"
+                                width="480" height="360"
+                                loading="lazy">
+                            <svg class="play-btn" viewBox="0 0 68 48">
+                                <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,0,34,0,34,0S12.21,0,6.9,1.55C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19C12.21,48,34,48,34,48s21.79,0,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#FF008C"/>
+                                <path d="M 45,24 27,14 27,34" fill="#fff"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ CONCERTS ═══════════════ -->
+        <section class="section-alt" id="concerts">
+            <div class="wrap">
+                <div class="titre">Concerts</div>
+
+                <div class="titre2">À venir</div>
+                <div id="concerts-avenir"></div>
+
+                <div class="titre2" id="titre-passes" style="display:none; margin-top:50px;">Passés</div>
+                <div id="concerts-passes" style="display:none;"></div>
+                <button class="button-text2" id="concerts-toggle">Passés ↓</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+        <div class="wrap">
+            <span class="copyright">Copyright © 2023–2026 RosaCanine</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/concerts.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- Script Lecteur Audio -->
+    <script>
+      const audioPlayer = document.getElementById("audioPlayer");
+      const audioSource = document.getElementById("audioSource");
+      const trackList = document.querySelectorAll("#trackList li");
+
+      trackList.forEach(track => {
+        track.addEventListener("click", () => {
+          trackList.forEach(t => t.classList.remove("active"));
+          track.classList.add("active");
+          audioSource.src = track.dataset.src;
+          audioPlayer.load();
+          audioPlayer.play();
+        });
+      });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-91H8NZ161R"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-91H8NZ161R');
+    </script>
+</body>
+
+</html>

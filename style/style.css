@@ -1,0 +1,893 @@
+/* ═══════════════════════════════════════════
+   ROSACANINE — Couleur #FF008C
+   Style inspiré Cachemire, identité Rosacanine
+   ═══════════════════════════════════════════ */
+
+/* ─── VARIABLES COULEURS ─── */
+:root {
+    --rose: #FF008C;
+    --rose-hover: #cc006f;
+    --noir: #000000; /* Background 1 */
+    --noir-alt: #070707; /* Background 2 */
+    --gris: #ffffff; /* H2 */
+    --gris-clair: #cccccc; /* écriture barre nav */
+    --blanc: #ffffff; /* Titre Rosacanine */
+}
+
+/* ─── RESET ─── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 300;
+    color: var(--blanc);
+    background-color: var(--noir);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s, opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* ─── LAYOUT ─── */
+.wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ═══════════════════════════════════════════
+   TITRES SECTIONS
+   ═══════════════════════════════════════════ */
+.titre {
+    font-size: 2rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    color: var(--rose);
+    margin-bottom: 20px; /* marge barre rose */
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.titre::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--rose);
+}
+
+.titre2 {
+    font-size: 1.1rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: var(--gris);
+}
+
+.titre2-passes {
+    margin-top: 50px;
+}
+
+/* ─── ACCENT (le C de RosaCanine) ─── */
+.accent {
+    color: var(--rose);
+    font-style: normal;
+}
+
+/* ═══════════════════════════════════════════
+   HEADER / NAV
+   ═══════════════════════════════════════════ */
+.header {
+    background-color: var(--noir);
+    position: fixed;
+    top: -80px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--rose);
+    transition: top 0.4s ease;
+}
+
+.header.visible {
+    top: 0;
+}
+
+.header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    gap: 15px;
+}
+
+/* Logo */
+.logo {
+    flex-shrink: 0;
+}
+
+.logo-grand {
+    height: 50px;
+    width: auto;
+}
+
+.logo-petit {
+    display: none;
+    height: 45px;
+    width: auto;
+}
+
+/* Social icons header */
+.social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social a {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s, opacity 0.3s;
+    width: 40px;
+    height: 40px;
+}
+
+.social a:hover {
+    transform: scale(1.15);
+    opacity: 0.7;
+}
+
+/* Navigation */
+.topnav {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.topnav a {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gris-clair);
+    transition: color 0.3s, background-color 0.3s;
+    white-space: nowrap;
+}
+
+.topnav a:hover {
+    color: var(--blanc);
+    background-color: var(--rose);
+    opacity: 1;
+}
+
+.topnav .nav-shop {
+    background-color: var(--rose);
+    color: var(--blanc);
+    font-weight: 600;
+}
+
+.topnav .nav-shop:hover {
+    background-color: var(--rose-hover);
+}
+
+/* Menu hamburger */
+.menu-icon {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--rose);
+    cursor: pointer;
+    padding: 5px;
+    flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════
+   SECTIONS ALTERNÉES
+   ═══════════════════════════════════════════ */
+.section-dark {
+    background-color: var(--noir);
+    padding: 60px 0;
+    padding-top: 20px;
+}
+
+.section-alt {
+    background-color: var(--noir-alt);
+    padding: 60px 0;
+    position: relative;
+}
+
+.section-alt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #222, transparent);
+}
+
+.section-alt::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #222, transparent);
+}
+
+/* ═══════════════════════════════════════════
+   HERO / GRID
+   ═══════════════════════════════════════════ */
+.hero {
+    text-align: center;
+}
+
+.hero-logo {
+    display: block;
+    max-width: 350px;
+    width: 80%;
+    height: auto;
+    margin: 0 auto 30px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    text-align: left;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 0;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--gris-clair);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.hero-social {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.hero-social img {
+    width: 32px;
+    height: 32px;
+}
+
+.hero-content .bio-content {
+    max-width: 100%;
+    text-align: left;
+    margin: 0 0 20px 0;
+}
+
+.hero-content .bio-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--blanc);
+}
+
+.hero-cta {
+    margin-top: 10px;
+}
+
+/* ═══════════════════════════════════════════
+   BOUTONS
+   ═══════════════════════════════════════════ */
+.button {
+    display: inline-block;
+    padding: 12px 35px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--blanc);
+    background-color: var(--rose);
+    border: 2px solid var(--rose);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: var(--rose-hover);
+    border-color: var(--rose-hover);
+    opacity: 1;
+}
+
+.button-outline {
+    background-color: transparent;
+    color: var(--rose);
+}
+
+.button-outline:hover {
+    background-color: var(--rose);
+    color: var(--blanc);
+}
+
+.button-text {
+    background: none;
+    border: none;
+    color: var(--rose);
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+.button-text:hover {
+    color: var(--blanc);
+}
+
+/* ═══════════════════════════════════════════
+   BIO
+   ═══════════════════════════════════════════ */
+.bio-suite {
+    display: none;
+}
+
+.bio-suite.visible {
+    display: block;
+}
+
+/* ═══════════════════════════════════════════
+   MUSIQUE / PLAYER MP3
+   ═══════════════════════════════════════════ */
+.player {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: var(--noir-alt);
+    padding: 25px;
+    border: 1px solid #1a1a1a;
+    border-radius: 4px;
+}
+
+.player-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.player-left .cover img {
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 10px 30px rgba(255, 0, 140, 0.15);
+}
+
+.player-left audio {
+    width: 100%;
+    max-width: 300px;
+    height: 35px;
+    accent-color: var(--rose);
+}
+
+.player-right .tracklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.player-right .tracklist li {
+    padding: 12px 15px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #1a1a1a;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.player-right .tracklist li:last-child {
+    border-bottom: none;
+}
+
+.player-right .tracklist li em {
+    color: var(--rose);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.player-right .tracklist li:hover {
+    background-color: rgba(255, 0, 140, 0.1);
+}
+
+.player-right .tracklist li.active {
+    color: var(--rose);
+    font-weight: 600;
+    background-color: rgba(255, 0, 140, 0.15);
+    border-left: 3px solid var(--rose);
+}
+
+.album-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ═══════════════════════════════════════════
+   VIDÉOS
+   ═══════════════════════════════════════════ */
+.video-wrap {
+    max-width: 800px;
+    margin: 0 auto 25px;
+}
+
+.video-main {
+    position: relative;
+}
+
+/* Facade YouTube */
+.youtube-facade {
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 16 / 9;
+    background-color: var(--noir);
+    overflow: hidden;
+}
+
+.youtube-facade img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.youtube-facade .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 68px;
+    height: 48px;
+    pointer-events: none;
+    transition: transform 0.2s;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+
+.youtube-facade:hover .play-btn {
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+.youtube-facade iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#videos .button {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+}
+
+/* Miniatures vidéos */
+.videos-thumb {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumb-link {
+    flex: 0 0 auto;
+    opacity: 0.5;
+    transition: opacity 0.3s, transform 0.2s;
+    border: 2px solid transparent;
+}
+
+.thumb-link:hover,
+.thumb-link.active {
+    opacity: 1;
+    border-color: var(--rose);
+}
+
+.thumb-link img {
+    width: 150px;
+    height: auto;
+}
+
+/* ═══════════════════════════════════════════
+   PHOTOS (galerie)
+   ═══════════════════════════════════════════ */
+.photo-main {
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.photo-grande {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    object-fit: contain;
+    background: #000;
+    transition: opacity 0.3s;
+}
+
+.photo-thumbs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.photo-thumb-link {
+    flex: 0 0 auto;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.photo-thumb-link:hover,
+.photo-thumb-link.active {
+    opacity: 1;
+    border-color: var(--rose);
+}
+
+.photo-thumb-link img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+/* ═══════════════════════════════════════════
+   CONCERTS
+   ═══════════════════════════════════════════ */
+#concerts-avenir,
+#concerts-passes {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.concerts {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.concert {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #1a1a1a;
+    gap: 10px;
+    flex-wrap: wrap;
+    transition: background-color 0.2s;
+}
+
+.concert:hover {
+    background-color: rgba(255, 0, 140, 0.04);
+}
+
+.concert time {
+    font-weight: 400;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: var(--gris);
+    min-width: 150px;
+    flex-shrink: 0;
+}
+
+.concert .sep {
+    color: var(--rose);
+    margin: 0 5px;
+}
+
+.sep-icon {
+    width: auto;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.concert .lieu {
+    flex: 1;
+    font-size: 1.3rem;
+    color: var(--gris);
+    max-width: 300px;
+    min-width: 150px;
+    text-align: center;
+}
+
+.concert .ville {
+    font-size: 1.3rem;
+    color: var(--gris);
+    min-width: 150px;
+    text-align: right;
+}
+
+.button-text2 {
+    display: block;
+    margin: 30px auto 0;
+    background: none;
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.button-text2:hover {
+    color: var(--rose);
+}
+
+/* ═══════════════════════════════════════════
+   CONTACT
+   ═══════════════════════════════════════════ */
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.contact-item {
+    text-align: center;
+}
+
+.contact-item strong {
+    display: block;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: var(--gris);
+}
+
+.contact-item a {
+    color: var(--rose);
+    font-size: 1.3rem;
+}
+
+.contact-item a:hover {
+    color: var(--blanc);
+    opacity: 1;
+}
+
+.social-footer {
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.footer {
+    background-color: var(--noir);
+    padding: 30px 0;
+    border-top: 1px solid var(--rose);
+}
+
+.footer .wrap {
+    text-align: center;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: #8a8787;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+
+/* ─── Tablette (< 900px) ─── */
+@media (max-width: 900px) {
+    .header .wrap {
+        flex-wrap: wrap;
+        height: auto;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .topnav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 10;
+        padding-top: 10px;
+    }
+
+    .topnav.responsive {
+        display: flex;
+    }
+
+    .topnav a {
+        padding: 14px 15px;
+        text-align: center;
+        border-top: 1px solid var(--rose);
+        font-size: 1rem;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .logo-grand {
+        display: none;
+    }
+
+    .logo-petit {
+        display: block;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content {
+        align-items: center;
+    }
+
+    .hero-content .bio-content {
+        text-align: center;
+    }
+
+    .player {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .titre {
+        font-size: 1.6rem;
+    }
+
+    .concert {
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .concert time,
+    .concert .lieu,
+    .concert .ville {
+        text-align: center;
+    }
+
+    .section-dark,
+    .section-alt {
+        padding: 45px 0;
+    }
+}
+
+/* ─── Mobile (< 500px) ─── */
+@media (max-width: 500px) {
+    .hero-subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+
+    .titre {
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+    }
+
+    .button {
+        padding: 10px 25px;
+        font-size: 0.8rem;
+    }
+
+    .player {
+        padding: 15px;
+    }
+
+    .player-right .tracklist li {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    .concert {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .concert time {
+        min-width: auto;
+        font-size: 0.9rem;
+    }
+
+    .concert .lieu {
+        min-width: auto;
+        max-width: 140px;
+        font-size: 0.9rem;
+    }
+
+    .concert .ville {
+        min-width: auto;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .section-dark,
+    .section-alt {
+        padding: 35px 0;
+    }
+}

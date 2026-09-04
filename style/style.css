@@ -35,6 +35,7 @@ body {
     background-color: var(--noir);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+
 }
 
 img {
@@ -60,6 +61,11 @@ a:hover {
     padding: 0 20px;
 }
 
+/* Elargissement ciblé pour la section Hero/Bio */
+#actu .wrap {
+    max-width: 1200px;
+}
+
 /* ═══════════════════════════════════════════
    TITRES SECTIONS
    ═══════════════════════════════════════════ */
@@ -70,20 +76,8 @@ a:hover {
     text-align: center;
     letter-spacing: 2px;
     color: var(--rose);
-    margin-bottom: 20px; /* marge barre rose */
-    padding-bottom: 20px;
+    margin-bottom: 30px;
     position: relative;
-}
-
-.titre::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--rose);
 }
 
 .titre2 {
@@ -106,112 +100,6 @@ a:hover {
     font-style: normal;
 }
 
-/* ═══════════════════════════════════════════
-   HEADER / NAV
-   ═══════════════════════════════════════════ */
-.header {
-    background-color: var(--noir);
-    position: fixed;
-    top: -80px;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 1px solid var(--rose);
-    transition: top 0.4s ease;
-}
-
-.header.visible {
-    top: 0;
-}
-
-.header .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 70px;
-    gap: 15px;
-}
-
-/* Logo */
-.logo {
-    flex-shrink: 0;
-}
-
-.logo-grand {
-    height: 50px;
-    width: auto;
-}
-
-.logo-petit {
-    display: none;
-    height: 45px;
-    width: auto;
-}
-
-/* Social icons header */
-.social {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.social a {
-    display: flex;
-    align-items: center;
-    transition: transform 0.2s, opacity 0.3s;
-    width: 40px;
-    height: 40px;
-}
-
-.social a:hover {
-    transform: scale(1.15);
-    opacity: 0.7;
-}
-
-/* Navigation */
-.topnav {
-    display: flex;
-    align-items: center;
-    gap: 0;
-}
-
-.topnav a {
-    padding: 8px 14px;
-    font-size: 0.85rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--gris-clair);
-    transition: color 0.3s, background-color 0.3s;
-    white-space: nowrap;
-}
-
-.topnav a:hover {
-    color: var(--blanc);
-    background-color: var(--rose);
-    opacity: 1;
-}
-
-.topnav .nav-shop {
-    background-color: var(--rose);
-    color: var(--blanc);
-    font-weight: 600;
-}
-
-.topnav .nav-shop:hover {
-    background-color: var(--rose-hover);
-}
-
-/* Menu hamburger */
-.menu-icon {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--rose);
-    cursor: pointer;
-    padding: 5px;
-    flex-shrink: 0;
-}
 
 /* ═══════════════════════════════════════════
    SECTIONS ALTERNÉES
@@ -249,6 +137,40 @@ a:hover {
 }
 
 /* ═══════════════════════════════════════════
+   HEADER FIXE & TRANSPARENT
+   ═══════════════════════════════════════════ */
+   .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.6); /* Noir avec 85% d'opacité + effet de flou en arrière-plan */
+    backdrop-filter: blur(5px); /* Effet de flou au scroll */
+    border-bottom: 1px solid var(--rose); /* Rappel rose discret */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.header.scrolled {
+    border-bottom-color: var(--rose-hover);
+}
+
+.header .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Ajuste la hauteur de ta barre selon tes besoins */
+}
+
+/* Style du logo dans le header */
+.header-logo img {
+    height: 80px; /* Ajuste la taille du logo */
+    width: auto;
+    display: block;
+}
+
+
+/* ═══════════════════════════════════════════
    HERO / GRID
    ═══════════════════════════════════════════ */
 .hero {
@@ -260,28 +182,71 @@ a:hover {
     max-width: 350px;
     width: 80%;
     height: auto;
-    margin: 0 auto 30px;
+    margin: 0 auto 80px;
 }
 
+/* Grille réorganisée en 1 colonne verticale */
 .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: left;
+    gap: 30px;
+    text-align: center;
+}
+
+/* Photo centrée grand format */
+.hero-media {
+    margin-left: 0; /* Annule le décalage négatif précédent */
+    width: 100%;
+    max-width: 900px; /* Taille maximale de la grande photo */
+    margin-bottom: 10px;
 }
 
 .hero-img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    margin: 0;
+    margin: 0 auto;
 }
 
-.hero-content {
+/* Alignement Flexbox pour le titre et son bouton */
+.hero-content .titre {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Alignement parfait du bouton + */
+#bio-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
+
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--rose);
+    font-size: 2.6rem;
+    line-height: 1;
+    cursor: pointer;
+
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+/* Effet au survol du bouton */
+#bio-toggle:hover {
+    color: var(--rose-hover);
+    transform: scale(1.3);
+}
+
+.hero-content .titre {
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .hero-subtitle {
@@ -289,23 +254,36 @@ a:hover {
     color: var(--gris-clair);
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+/* Social icons */
+
+.hero-social a {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s, opacity 0.3s;
+    width: 40px;
+    height: 40px;
+}
+
+.hero-social a:hover {
+    transform: scale(1.5);
+    opacity: 0.6;
 }
 
 .hero-social {
     display: flex;
+    justify-content: center;
     gap: 15px;
     margin-bottom: 20px;
 }
 
-.hero-social img {
-    width: 32px;
-    height: 32px;
-}
+/*******/
 
 .hero-content .bio-content {
     max-width: 100%;
-    text-align: left;
+    text-align: center; /* Texte de la biographie centré sous la photo */
     margin: 0 0 20px 0;
 }
 
@@ -325,12 +303,10 @@ a:hover {
    ═══════════════════════════════════════════ */
 .button {
     display: inline-block;
-    padding: 12px 35px;
     font-family: 'Oswald', sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2px;
     color: var(--blanc);
     background-color: var(--rose);
     border: 2px solid var(--rose);
@@ -789,13 +765,14 @@ a:hover {
         display: none;
     }
 
-    .logo-petit {
-        display: block;
-    }
 
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+
+    .hero-media {
+        margin-left: 0;
     }
 
     .hero-content {

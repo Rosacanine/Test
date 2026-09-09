@@ -159,4 +159,46 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ─── LECTEUR AUDIO ───
+    var playerAudio = document.querySelector('.player audio');
+    var trackItems = document.querySelectorAll('.player .tracklist li');
+
+    if (playerAudio && trackItems.length > 0) {
+        var currentTrackIndex = 0;
+
+        function jouerChanson(index) {
+            if (index < 0 || index >= trackItems.length) return;
+
+            currentTrackIndex = index;
+            var item = trackItems[index];
+            var audioSrc = item.getAttribute('data-src');
+
+            if (audioSrc) {
+                playerAudio.src = audioSrc;
+                playerAudio.play();
+
+                // Gestion de la classe CSS active
+                trackItems.forEach(function (el) {
+                    el.classList.remove('active');
+                });
+                item.classList.add('active');
+            }
+        }
+
+        // Clic sur un morceau de la tracklist
+        trackItems.forEach(function (item, idx) {
+            item.addEventListener('click', function () {
+                jouerChanson(idx);
+            });
+        });
+
+        // Passage automatique au morceau suivant à la fin
+        playerAudio.addEventListener('ended', function () {
+            var nextIndex = currentTrackIndex + 1;
+            if (nextIndex < trackItems.length) {
+                jouerChanson(nextIndex);
+            }
+        });
+    }
+
 });

@@ -491,6 +491,24 @@ a:hover {
 }
 
 @media (max-width: 600px) {
+
+    .titre {
+        font-size: 1.7rem;
+    }
+    
+    .titre2 {
+        font-size: 1.5rem;
+    }
+
+    .titre3 {
+        font-size: 1.5rem;
+    }
+
+    .bio-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
     .concert {
         padding: 10px 4px;
         gap: 6px;
@@ -508,5 +526,9 @@ a:hover {
 
     .concert .sep {
         margin: 0 2px;
+    }
+
+    .footer {
+        font-size: 1rem;
     }
 }

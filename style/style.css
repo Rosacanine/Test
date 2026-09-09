@@ -74,20 +74,18 @@ a:hover {
     font-weight: 200;
     text-transform: uppercase;
     text-align: center;
-    letter-spacing: 2px;
     color: var(--rose);
     margin-bottom: 30px;
     position: relative;
 }
 
 .titre2 {
-    font-size: 1.1rem;
-    font-weight: 100;
+    font-size: 1.6rem;
+    font-weight: 200;
     text-transform: uppercase;
     text-align: center;
-    letter-spacing: 2px;
     margin-bottom: 20px;
-    color: var(--gris);
+    color: var(--rose);
 }
 
 .titre2-passes {
@@ -107,7 +105,7 @@ a:hover {
 .section-dark {
     background-color: var(--noir);
     padding: 60px 0;
-    padding-top: 20px;
+    padding-top: 0px;
 }
 
 .section-alt {
@@ -145,9 +143,9 @@ a:hover {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.6); /* Noir avec 85% d'opacité + effet de flou en arrière-plan */
-    backdrop-filter: blur(5px); /* Effet de flou au scroll */
-    border-bottom: 1px solid var(--rose); /* Rappel rose discret */
+    background-color: rgba(0, 0, 0, 0.6); /* Noir avec 60% d'opacité */
+    /* backdrop-filter: blur(5px); Effet de flou au scroll
+    border-bottom: 1px solid var(--rose); Rappel rose discret */
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -531,6 +529,32 @@ a:hover {
     height: auto;
 }
 
+/* Layout côte à côte pour Musique & Vidéos */
+.media-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.media-row #musique,
+.media-row #videos {
+    flex: 1 1 50%;
+    min-width: 320px;
+}
+
+/* Ajustement de la taille du lecteur MP3 pour le format côte à côte */
+.media-row .player {
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.media-row .player-left .cover img {
+    max-width: 180px;
+}
+
 /* ═══════════════════════════════════════════
    PHOTOS (galerie)
    ═══════════════════════════════════════════ */
@@ -652,12 +676,11 @@ a:hover {
     background: none;
     border: none;
     font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 1.6rem;
+    font-weight: 200;
     text-transform: uppercase;
     text-align: center;
-    letter-spacing: 2px;
-    color: #888;
+    color: var(--rose-hover);
     cursor: pointer;
     transition: color 0.3s;
 }
@@ -729,7 +752,23 @@ a:hover {
    RESPONSIVE
    ═══════════════════════════════════════════ */
 
+/* Sur écran mobile/tablette : retour en colonne */
+@media (max-width: 900px) {
+    .media-row {
+        flex-direction: column;
+    }
+    
+    .media-row #musique,
+    .media-row #videos {
+        width: 100%;
+    }
+
+    .media-row .player {
+        grid-template-columns: 1fr;
+    }
+
 /* ─── Tablette (< 900px) ─── */
+
 @media (max-width: 900px) {
     .header .wrap {
         flex-wrap: wrap;
@@ -814,18 +853,37 @@ a:hover {
 /* ─── Mobile (< 500px) ─── */
 @media (max-width: 500px) {
     .hero-subtitle {
-        font-size: 0.9rem;
+        font-size: 1rem;
         letter-spacing: 2px;
     }
 
     .titre {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         letter-spacing: 2px;
+    }
+
+    .titre2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--rose);
+    }
+    
+    .titre2-passes {
+        margin-top: 50px;
     }
 
     .button {
         padding: 10px 25px;
-        font-size: 0.8rem;
+        font-size: 0.5rem;
+    }
+
+    .button-text2 {
+        display: block;
+        margin: 30px auto 0;
+        background: none;
+        border: none;
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.5rem;
     }
 
     .player {

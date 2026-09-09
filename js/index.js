@@ -1,6 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // --- Charge Google Analytics dynamiquement ---
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-91H8NZ161R';
+    document.head.appendChild(gaScript);
 
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-91H8NZ161R');
+    
     // ─── SMOOTH SCROLL (uniquement pour la nav) ───
     var navLinks = document.querySelectorAll('.topnav a, .footer-nav a');
 
@@ -140,11 +150,11 @@ document.addEventListener('DOMContentLoaded', function () {
             if (concertsPassesDiv.style.display === 'block') {
                 concertsPassesDiv.style.display = 'none';
                 titrePassesDiv.style.display = 'none';
-                concertsToggle.textContent = 'Voir les concerts pass\u00e9s \u2193';
+                concertsToggle.textContent = 'concerts pass\u00e9s';
             } else {
                 concertsPassesDiv.style.display = 'block';
                 titrePassesDiv.style.display = 'block';
-                concertsToggle.textContent = 'Masquer les concerts pass\u00e9s \u2191';
+                concertsToggle.textContent = 'Masquer les concerts pass\u00e9s';
             }
         });
     }

@@ -38,10 +38,6 @@
                 <a href="#" class="header-logo">
                     <img src="images/logo/logo-rosacanine-ligne.svg" alt="RosaCanine Logo">
                 </a>
-        
-                <nav class="topnav">
-                    <!-- Tes liens de navigation actuels -->
-                </nav>
             </div>
         </header>
         <!-- ═══════════════ HERO / ACTU / BIO ═══════════════ -->
@@ -50,7 +46,7 @@
                 <div class="hero"> 
                     <div class="hero-grid">
                         <div class="hero-media">
-                            <img src="images/photos/bio2.jpg" alt="Portrait du groupe Rosacanine en noir et blanc" class="hero-img">
+                            <img src="images/photos/bio3.png" alt="Portrait du groupe Rosacanine en noir et blanc" class="hero-img">
                         </div>
                         <div class="hero-content">
                             <div class="titre">
@@ -112,67 +108,63 @@
 
         </section>
 
-        <!-- ═══════════════ MUSIQUE ═══════════════ -->
-        <section class="section-dark" id="musique">
-            <div class="wrap">
-                <div class="titre">Musique</div>
-                <div class="titre2">Nouvel EP "UNE PLACE" — 2026</div>
-                
-                <!-- PLAYER MP3 INTEGRÉ -->
-                <div class="player">
-                    <div class="player-left">
-                        <div class="cover">
-                            <img src="https://rosacanine.github.io/data/images/photos/RC-pochette-2em.png" alt="Pochette EP Une Place - Rosacanine">
-                        </div>
-                        <audio id="audioPlayer" controls>
-                            <source id="audioSource" src="https://rosacanine.github.io/data/music/REPONDS MOI.mp3" type="audio/mpeg">
-                            Votre navigateur ne supporte pas l'audio HTML5.
-                        </audio>
+        <!-- ═══════════════ MÉDIAS (MUSIQUE + VIDÉOS) ═══════════════ -->
+<div class="media-row">
+    <!-- MUSIQUE -->
+    <section class="section-dark" id="musique">
+        <div class="wrap">
+            <div class="titre2">Nouvel EP "UNE PLACE" — 2026</div>
+            
+            <div class="player">
+                <div class="player-left">
+                    <div class="cover">
+                        <img src="https://rosacanine.github.io/data/images/photos/RC-pochette-2em.png" alt="Pochette EP Une Place - Rosacanine">
                     </div>
-
-                    <div class="player-right">
-                        <ul class="tracklist" id="trackList">
-                            <li class="active" data-src="https://rosacanine.github.io/data/music/REPONDS MOI.mp3"><em>01</em> - Réponds-moi</li>
-                            <li data-src="https://rosacanine.github.io/data/music/DES YEUX.mp3"><em>02</em> - Des yeux</li>
-                            <li data-src="https://rosacanine.github.io/data/music/LE JOUR D'APRES.mp3"><em>03</em> - Le jour d'après</li>
-                            <li data-src="https://rosacanine.github.io/data/music/LEVE LA TETE.mp3"><em>04</em> - Lève la tête</li>
-                            <li data-src="https://rosacanine.github.io/data/music/UNE PLACE.mp3"><em>05</em> - Une place</li>
-                            <li data-src="https://rosacanine.github.io/data/music/A TA MEMOIRE.mp3"><em>06</em> - A ta mémoire</li>
-                        </ul>
-                    </div>
+                    <audio id="audioPlayer" controls>
+                        <source id="audioSource" src="https://rosacanine.github.io/data/music/REPONDS MOI.mp3" type="audio/mpeg">
+                        Votre navigateur ne supporte pas l'audio HTML5.
+                    </audio>
                 </div>
 
-        <!--        <div class="album-buttons">
-                    <a href="https://rosacanine.bandcamp.com/merch" target="_blank" rel="noopener noreferrer" class="button button-outline">Commander L'EP</a>
-                </div> -->
+                <div class="player-right">
+                    <ul class="tracklist" id="trackList">
+                        <li class="active" data-src="https://rosacanine.github.io/data/music/REPONDS MOI.mp3"><em>01</em> - Réponds-moi</li>
+                        <li data-src="https://rosacanine.github.io/data/music/DES YEUX.mp3"><em>02</em> - Des yeux</li>
+                        <li data-src="https://rosacanine.github.io/data/music/LE JOUR D'APRES.mp3"><em>03</em> - Le jour d'après</li>
+                        <li data-src="https://rosacanine.github.io/data/music/LEVE LA TETE.mp3"><em>04</em> - Lève la tête</li>
+                        <li data-src="https://rosacanine.github.io/data/music/UNE PLACE.mp3"><em>05</em> - Une place</li>
+                        <li data-src="https://rosacanine.github.io/data/music/A TA MEMOIRE.mp3"><em>06</em> - A ta mémoire</li>
+                    </ul>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ═══════════════ VIDÉOS ═══════════════ -->
-        <section class="section-alt" id="videos">
-            <div class="wrap">
-                <div class="titre">Vidéos</div>
-                <div class="video-wrap">
-                    <div class="video-main">
-                        <div class="youtube-facade" data-id="Na1gVEAh3AE">
-                            <img src="https://i.ytimg.com/vi/Na1gVEAh3AE/hqdefault.jpg" 
-                                 alt="Teaser Rosacanine — Cliquez pour lire la vidéo"
-                                width="480" height="360"
-                                loading="lazy">
-                            <svg class="play-btn" viewBox="0 0 68 48">
-                                <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,0,34,0,34,0S12.21,0,6.9,1.55C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19C12.21,48,34,48,34,48s21.79,0,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#FF008C"/>
-                                <path d="M 45,24 27,14 27,34" fill="#fff"/>
-                            </svg>
-                        </div>
+    <!-- VIDÉOS -->
+    <section class="section-alt" id="videos">
+        <div class="wrap">
+            <div class="video-wrap">
+                <div class="video-main">
+                    <div class="youtube-facade" data-id="Na1gVEAh3AE">
+                        <img src="https://i.ytimg.com/vi/Na1gVEAh3AE/hqdefault.jpg" 
+                             alt="Teaser Rosacanine — Cliquez pour lire la vidéo"
+                             width="480" height="360"
+                             loading="lazy">
+                        <svg class="play-btn" viewBox="0 0 68 48">
+                            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,0,34,0,34,0S12.21,0,6.9,1.55C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19C12.21,48,34,48,34,48s21.79,0,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#FF008C"/>
+                            <path d="M 45,24 27,14 27,34" fill="#fff"/>
+                        </svg>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+</div>
 
         <!-- ═══════════════ CONCERTS ═══════════════ -->
         <section class="section-alt" id="concerts">
             <div class="wrap">
-                <div class="titre">Concerts à venir</div>
+                <div class="titre2">Concerts à venir</div>
                 <div id="concerts-avenir"></div>
 
                 <div class="titre2" id="titre-passes" style="display:none; margin-top:50px;">Passés</div>

@@ -92,39 +92,37 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ─── 6. CHARGEMENT ET RENDU DES CONCERTS (Repo Distant) ───
-    function afficherConcerts(elementId, listeConcerts) {
-        var container = document.getElementById(elementId);
-        if (!container || !Array.isArray(listeConcerts)) return;
-
-        container.innerHTML = ''; // Vide le conteneur avant injection
-
-        listeConcerts.forEach(function (c) {
-            var concertDiv = document.createElement('div');
-            concertDiv.className = 'concert';
-
-            // Supporte majuscules ou minuscules dans les données distant (date/Date, lieu/Lieu, etc.)
-            var dateVal = c.date || c.Date || '';
-            var lieuVal = c.lieu || c.Lieu || '';
-            var villeVal = c.ville || c.Ville || '';
-
-            concertDiv.innerHTML =
-                '<time>' + dateVal + '</time>' +
-                '<span class="sep">/</span>' +
-                '<span class="lieu">' + lieuVal + '</span>' +
-                '<span class="sep">/</span>' +
-                '<span class="ville">' + villeVal + '</span>';
-
-            container.appendChild(concertDiv);
-        });
+    // ─── 6. CHARGEMENT DES CONCERTS ───
+    function chargerLesConcerts() {
+        // Option A: Si le fichier distant appelle la fonction remplirConcerts
+        if (typeof remplirConcerts === 'function') {
+            if (typeof concertsAvenir !== 'undefined') remplirConcerts('concerts-avenir', concertsAvenir);
+            if (typeof concertsPasses !== 'undefined') remplirConcerts('concerts-passes', concertsPasses);
+            if (typeof concerts_avenir !== 'undefined') remplirConcerts('concerts-avenir', concerts_avenir);
+            if (typeof concerts_passes !== 'undefined') remplirConcerts('concerts-passes', concerts_passes);
+        } else {
+            // Option B: Fallback pour injecter dans les div modernes si remplirConcerts n'existe pas
+            var avenir = (typeof concerts_avenir !== 'undefined') ? concerts_avenir : ((typeof concertsAvenir !== 'undefined') ? concertsAvenir : []);
+            var passes = (typeof concerts_passes !== 'undefined') ? concerts_passes : ((typeof concertsPasses !== 'undefined') ? concertsPasses : []);
+            
+            function injecter(elementId, liste) {
+                var container = document.getElementById(elementId);
+                if (!container || !Array.isArray(liste)) return;
+                container.innerHTML = '';
+                liste.forEach(function (c) {
+                    var div = document.createElement('div');
+                    div.className = 'concert';
+                    div.innerHTML = '<time>' + (c.date || c.Date) + '</time><span class="sep">/</span><span class="lieu">' + (c.lieu || c.Lieu) + '</span><span class="sep">/</span><span class="ville">' + (c.ville || c.Ville) + '</span>';
+                    container.appendChild(div);
+                });
+            }
+            injecter('concerts-avenir', avenir);
+            injecter('concerts-passes', passes);
+        }
     }
 
-    // Récupération souple des variables distantes
-    var avenir = (typeof concerts_avenir !== 'undefined') ? concerts_avenir : ((typeof concertsAvenir !== 'undefined') ? concertsAvenir : []);
-    var passes = (typeof concerts_passes !== 'undefined') ? concerts_passes : ((typeof concertsPasses !== 'undefined') ? concertsPasses : []);
-
-    afficherConcerts('concerts-avenir', avenir);
-    afficherConcerts('concerts-passes', passes);
+    // Exécution du chargement des dates
+    chargerLesConcerts();
 
     // ─── 7. CONCERTS PASSÉS TOGGLE ───
     var concertsToggle = document.getElementById('concerts-toggle');

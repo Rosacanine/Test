@@ -34,6 +34,7 @@ body {
     background-color: var(--noir);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    padding-top: 170px; /* Ajustez cette valeur selon la hauteur réelle de votre header */
 }
 
 img {
@@ -54,9 +55,13 @@ a:hover {
 
 /* ─── HEADER NORMAL ─── */
 .header {
-    position: relative;
+    position: fixed;   /* Fixe le header par-dessus le contenu */
+    top: 0;
+    left: 0;
+    width: 100%;       /* Prend toute la largeur de l'écran */
+    z-index: 1000;     /* Reste au-dessus de tout le reste des éléments */
     background-color: var(--noir);
-    padding: 20px 0 10px 0;
+    padding: 15px 0 10px 0;
     text-align: center;
 }
 
@@ -125,7 +130,7 @@ a:hover {
 .sticky-player {
     position: -webkit-sticky;
     position: sticky;
-    top: 20px;
+    top: 200px; /* Décale l'arrêt du lecteur sous le header fixe (ajuster si besoin) */
 }
 
 /* ═══════════════════════════════════════════
@@ -436,8 +441,10 @@ a:hover {
 }
 
 .sep-icon {
-    width: auto;
-    height: 30px;
+    width: 32px;
+    height: 32px;
+    margin: 0 8px;
+    flex: 0 0 auto;
     display: inline-block;
     vertical-align: middle;
 }
@@ -556,8 +563,52 @@ a:hover {
         margin-right: 6px;
     }
 
+    .sep-icon {
+        width: 6px;
+        height: 6px;
+        margin: 0 5px;
+    }
+
     .footer {
         font-size: 0.8rem;
     }
 
+    /* Décale le body pour la taille mobile du header */
+    body {
+        padding-top: 100px;
+    }
+
+    .header {
+        padding: 10px 0 5px 0;
+    }
+
+    .header-logo img {
+        height: 45px; /* Légèrement réduit pour gagner de la place verticale */
+        margin-bottom: 15px;
+    }
+
+    .hero-social {
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+
+    .hero-social a {
+        width: 26px;
+        height: 26px;
+    }
+
+    .player .tracklist li em {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
+    .player .tracklist li.active {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
+    .player .tracklist li {
+        font-weight: 200;
+        font-size: 1rem;
+    }
 }

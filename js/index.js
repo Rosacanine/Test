@@ -105,6 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
             var avenir = (typeof concerts_avenir !== 'undefined') ? concerts_avenir : ((typeof concertsAvenir !== 'undefined') ? concertsAvenir : []);
             var passes = (typeof concerts_passes !== 'undefined') ? concerts_passes : ((typeof concertsPasses !== 'undefined') ? concertsPasses : []);
             
+            var sepIcon = '<img class="sep-icon" src="images/logo/icons/tache3.svg" alt="" aria-hidden="true">';
+
             function injecter(elementId, liste) {
                 var container = document.getElementById(elementId);
                 if (!container || !Array.isArray(liste)) return;
@@ -112,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 liste.forEach(function (c) {
                     var div = document.createElement('div');
                     div.className = 'concert';
-                    div.innerHTML = '<time>' + (c.date || c.Date) + '</time><span class="sep">/</span><span class="lieu">' + (c.lieu || c.Lieu) + '</span><span class="sep">/</span><span class="ville">' + (c.ville || c.Ville) + '</span>';
+                    div.innerHTML = '<time>' + (c.date || c.Date) + '</time>' + sepIcon + '<span class="lieu">' + (c.lieu || c.Lieu) + '</span>' + sepIcon + '<span class="ville">' + (c.ville || c.Ville) + '</span>';
                     container.appendChild(div);
                 });
             }

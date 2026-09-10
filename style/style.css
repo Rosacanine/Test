@@ -12,7 +12,6 @@
     --gris: #ffffff;
     --gris-clair: #cccccc;
     --blanc: #ffffff;
-    --header-height: 100px;
 }
 
 /* ─── RESET ─── */
@@ -26,7 +25,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -54,24 +52,18 @@ a:hover {
     opacity: 0.8;
 }
 
-/* ─── HEADER FIXE ─── */
+/* ─── HEADER NORMAL ─── */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(5px);
-    transition: background-color 0.3s ease;
-    height: var(--header-height);
+    position: relative;
+    background-color: var(--noir);
+    padding: 20px 0 10px 0;
+    text-align: center;
 }
 
 .header .wrap {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
@@ -81,6 +73,27 @@ a:hover {
     height: 70px;
     width: auto;
     display: block;
+    margin-bottom: 20px;
+}
+
+.hero-social {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.hero-social a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.hero-social a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
 }
 
 /* ═══════════════════════════════════════════
@@ -90,7 +103,7 @@ a:hover {
     display: flex;
     max-width: 1400px;
     margin: 0 auto;
-    padding: calc(var(--header-height) + 30px) 20px 60px 20px;
+    padding: 20px 20px 60px 20px;
     gap: 40px;
 }
 
@@ -110,8 +123,9 @@ a:hover {
 
 /* FIXATION DU LECTEUR EN STICKY */
 .sticky-player {
+    position: -webkit-sticky;
     position: sticky;
-    top: calc(var(--header-height) + 20px);
+    top: 20px;
 }
 
 /* ═══════════════════════════════════════════
@@ -131,13 +145,17 @@ a:hover {
 }
 
 .titre2 {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 200;
     text-transform: uppercase;
-    text-align: center;
+    color: var(--rose);
     margin-bottom: 20px;
-    color: var(--rose); 
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre le texte ET le bouton ensemble */
+    gap: 12px; /* Espacement entre le mot CONCERTS et le bouton + */
     padding-bottom: 10px;
+    border-bottom: 1px solid var(--rose);
 }
 
 .titre3 {
@@ -171,46 +189,49 @@ a:hover {
     border-radius: 4px;
 }
 
-.hero-subtitle {
-    font-size: 1.2rem;
-    color: var(--gris-clair);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-.hero-social {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.hero-social a {
+/* Style unifié des boutons toggle */
+.btn-toggle {
+    background: transparent;
+    border: 2px solid var(--rose);
+    border-radius: 50%;
     width: 32px;
     height: 32px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    transition: transform 0.2s, opacity 0.3s;
-}
-
-.hero-social a:hover {
-    transform: scale(1.2);
-    opacity: 0.8;
-}
-
-#bio-toggle {
-    background: none;
-    border: none;
-    color: var(--rose);
-    font-size: 2.2rem;
-    line-height: 1;
+    justify-content: center;
     cursor: pointer;
-    transition: transform 0.2s ease, color 0.3s ease;
+    padding: 0;
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
-#bio-toggle:hover {
-    color: var(--rose-hover);
-    transform: scale(1.2);
+.btn-toggle:hover {
+    background-color: var(--rose);
+    transform: scale(1.1);
+}
+
+.toggle-icon {
+    width: 16px;
+    height: 16px;
+    stroke: var(--rose);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    transition: stroke 0.25s ease, transform 0.3s ease;
+}
+
+.btn-toggle:hover .toggle-icon {
+    stroke: var(--noir);
+}
+
+/* Animation du signe + vers - */
+.toggle-icon .icon-v {
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.25s ease;
+}
+
+/* État actif (bouton déplié) */
+.btn-toggle.active .toggle-icon .icon-v {
+    transform: rotate(90deg);
+    opacity: 0;
 }
 
 .bio-content p {
@@ -318,7 +339,7 @@ a:hover {
 
 .youtube-facade img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
 
@@ -348,12 +369,12 @@ a:hover {
 }
 
 /* ═══════════════════════════════════════════
-   CONCERTS (Resserrés et bien alignés)
+   CONCERTS
    ═══════════════════════════════════════════ */
 #concerts-avenir,
 #concerts-passes {
     width: 100%;
-    max-width: 650px; /* Restreint la largeur du bloc complet */
+    max-width: 650px;
     margin: 0 auto;
 }
 
@@ -369,7 +390,7 @@ a:hover {
     flex-wrap: nowrap !important;
     align-items: center;
     justify-content: space-between;
-    gap: 10px; /* Espacement fixe entre les blocs */
+    gap: 10px;
     padding: 12px 15px;
     border-bottom: 1px solid #1a1a1a;
     transition: background-color 0.2s;
@@ -379,7 +400,6 @@ a:hover {
     background-color: rgba(255, 0, 140, 0.04);
 }
 
-/* Date à GAUCHE */
 .concert time {
     flex: 0 0 auto;
     font-weight: 400;
@@ -390,7 +410,6 @@ a:hover {
     white-space: nowrap;
 }
 
-/* Lieu au CENTRE */
 .concert .lieu {
     flex: 1;
     font-size: 1.2rem;
@@ -401,7 +420,6 @@ a:hover {
     text-overflow: ellipsis;
 }
 
-/* Ville à DROITE */
 .concert .ville {
     flex: 0 0 auto;
     font-size: 1.2rem;
@@ -410,7 +428,6 @@ a:hover {
     white-space: nowrap;
 }
 
-/* Séparateurs et icônes */
 .concert .sep {
     color: var(--rose);
     margin: 0 4px;
@@ -425,44 +442,29 @@ a:hover {
     vertical-align: middle;
 }
 
-/* Bouton Concerts passés */
-.button-text2 {
-    display: block;
-    margin: 30px auto 0;
-    background: none;
-    border: none;
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 200;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--rose-hover);
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.button-text2:hover {
-    color: var(--rose);
-}
-
 .footer {
     background-color: var(--noir);
     padding: 30px 0;
     border-top: 1px solid var(--rose);
     color: var(--gris-clair);
+    font-style: italic;
 }
 
 .footer .wrap {
     text-align: center;
 }
 
+.copyright .accent {
+    font-style: italic;
+}
+
 /* ═══════════════════════════════════════════
-   RESPONSIVE (TABLETTE & MOBILE)
+   RESPONSIVE TABLETTE
    ═══════════════════════════════════════════ */
 @media (max-width: 992px) {
     .page-container {
         flex-direction: column;
-        padding-top: calc(var(--header-height) + 10px);
+        padding-top: 20px;
     }
 
     .main-column,
@@ -490,18 +492,34 @@ a:hover {
     }
 }
 
-@media (max-width: 600px) {
+/* ═══════════════════════════════════════════
+   RESPONSIVE MOBILE
+   ═══════════════════════════════════════════ */
+
+   @media (max-width: 600px) {
+
+    .header-logo img {
+        height: 50px;
+        margin-bottom: 20px;
+    }
+        
+    .hero-social a {
+        width: 30px;
+        height: 30px;
+    }
+
+    .hero-social {
+        gap: 15px;
+        margin-bottom: 0;
+    }
 
     .titre {
         font-size: 1.7rem;
     }
     
     .titre2 {
-        font-size: 1.5rem;
-    }
-
-    .titre3 {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
+        justify-content: flex-start;
     }
 
     .bio-content p {
@@ -509,26 +527,37 @@ a:hover {
         line-height: 1.5;
     }
 
+    /* STRUCTURE CONCERT SUR MOBILE */
     .concert {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
         padding: 10px 4px;
-        gap: 6px;
+        gap: 0; /* Géré par les largeurs et marges */
     }
 
-    .concert time,
+    /* La date prend une largeur fixe à gauche pour tout aligner proprement */
+    .concert time {
+        font-size: 0.85rem;
+        min-width: 100px; /* Aligne le début des lieux pour toutes les lignes */
+        flex-shrink: 0;
+    }
+
+    /* Le bloc Lieu / Ville démarre immédiatement après et s'aligne à gauche */
     .concert .lieu,
     .concert .ville {
         font-size: 0.85rem;
+        text-align: left;
     }
 
-    .sep-icon {
-        height: 12px;
-    }
-
-    .concert .sep {
-        margin: 0 2px;
+    /* Ajoute un petit espace entre le lieu et la ville */
+    .concert .lieu {
+        margin-right: 6px;
     }
 
     .footer {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
+
 }

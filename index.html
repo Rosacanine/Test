@@ -31,11 +31,25 @@
 
 <body>
 
-    <!-- ═══════════════ HEADER FIXE ═══════════════ -->
+    <!-- ═══════════════ HEADER + Réseaux ═══════════════ -->
     <header class="header">
         <div class="wrap">
             <a href="#" class="header-logo">
                 <img src="images/logo/logo-rosacanine-ligne.svg" alt="RosaCanine Logo">
+            </a>
+        </div>
+        <div class="hero-social">
+            <a href="https://www.facebook.com/RosaCanineOfficiel" target="_blank" rel="noopener noreferrer" title="Facebook">
+                <img src="images/logo/logo-fb.svg" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/rosacanineofficiel" target="_blank" rel="noopener noreferrer" title="Instagram">
+                <img src="images/logo/logo-insta.svg" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/@rosacanineofficiel" target="_blank" rel="noopener noreferrer" title="YouTube">
+                <img src="images/logo/logo-youtube.svg" alt="YouTube">
+            </a>
+            <a href="mailto:rosacanine@gmail.com" title="Email">
+                <img src="images/logo/logo-email.svg" alt="Email">
             </a>
         </div>
     </header>
@@ -49,61 +63,54 @@
             <section class="section-bio" id="actu">
                 <div class="bio-grid">
                     
-                    <!-- Photo Bio (à gauche, 1/3) -->
-                    <div class="bio-photo">
-                        <img src="images/photos/Bio.jpg" alt="Portrait du groupe Rosacanine" class="hero-img">
-                    </div>
+                    <!-- Photo Bio (adaptative mobile / desktop) -->
+        <div class="bio-photo">
+            <picture>
+            <!-- Photo pour smartphone (écrans <= 600px) -->
+                <source media="(max-width: 600px)" srcset="images/photos/bio2.jpg">
+            <!-- Photo par défaut pour ordinateur / tablette -->
+                <img src="images/photos/Bio.jpg" alt="Portrait du groupe Rosacanine" class="hero-img">
+             </picture>
+        </div>
                     
-                    <!-- Réseaux + Biographie (à droite, 1/3) -->
+                    <!-- Biographie (à droite, 1/3) -->
                     <div class="bio-text-content">
                         <div class="titre">
                             <span>BIOGRAPHIE</span>
-                            <button id="bio-toggle" aria-label="Développer la biographie">+</button>
-                        </div>
-                        <p class="hero-subtitle">Rock chanté en français</p>
-                        
-                        <div class="hero-social">
-                            <a href="https://www.facebook.com/RosaCanineOfficiel" target="_blank" rel="noopener noreferrer" title="Facebook">
-                                <img src="images/logo/logo-fb.svg" alt="Facebook">
-                            </a>
-                            <a href="https://www.instagram.com/rosacanineofficiel" target="_blank" rel="noopener noreferrer" title="Instagram">
-                                <img src="images/logo/logo-insta.svg" alt="Instagram">
-                            </a>
-                            <a href="https://www.youtube.com/@rosacanineofficiel" target="_blank" rel="noopener noreferrer" title="YouTube">
-                                <img src="images/logo/logo-youtube.svg" alt="YouTube">
-                            </a>
-                            <a href="mailto:rosacanine@gmail.com" title="Email">
-                                <img src="images/logo/logo-email.svg" alt="Email">
-                            </a>
+                            <button id="bio-toggle" class="btn-toggle" aria-label="Développer la biographie">
+                                <svg viewBox="0 0 24 24" class="toggle-icon">
+                                    <line x1="12" y1="5" x2="12" y2="19" class="icon-v"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12" class="icon-h"></line>
+                                </svg>
+                            </button>
                         </div>
 
                         <div class="bio-content">
                             <p>
-                                Rosa<span class="accent">C</span>anine éclot en mars 2023. Tirant son nom de cet arbuste épineux et rustique, 
-                                cette rose-chien leur ressemble. Une bande son rock, dynamique et directe, en français dans le texte, 
-                                qui caresse l'âme et pique au cœur.
+                                Rosa<span class="accent">C</span>anine éclot en mars 2023 à Toulouse (Nord s’il vous plaît). 
+                                <p>Tirant son nom de cet arbuste épineux et rustique, cette rose-chien leur ressemble.
+                                </p>
                             </p>
                             <div class="bio-suite" id="bio-suite">
                                 <p>
-                                    Cette bande aurait pu s'appeler « Les copains d'abord ». Originaire de Toulouse (Nord s'il vous plaît), 
-                                    les membres de ce généreux gang n'attendaient qu'une opportunité pour se retrouver. 
-                                    Biberonnés à la sauce rock de l'amérique fugazienne, les guitares sont autant rageuses que mélodieuses. 
-                                    La rythmique, ancrée, soutient cette voix habitée et ces mots qui vous embarquent. 
-                                    Des concerts qui se jouent comme s'il s'agissait du dernier. Les regards sont complices et l'énergie communicative.
+                                    Quatre garçons, biberonnés à la chanson française, secoués par les sonorités directes du rock et portés par le goût des refrains qui collent et se chantent à pleine voix. 
+                                    Lectures, rêveries et quotidien irriguent chaque mot. 
+                                    La formule est simple, dynamique, efficace : basse, guitares, batterie, voix. 
+                                    En français dans le texte. Un rock vibrant, ancré, qui refuse le superflu et regarde droit.
                                 </p>
                                 <p>
-                                    Dès ses débuts, la scène s'impose comme une nécessité. 
-                                    La formation enchaîne les concerts tous terrains, des clubs aux festivals locaux jusqu'aux premières parties. 
-                                    Alors que 2024 s'achève en Vendée sur le Festival Bar-Bars (Zinor-Montaigu), 
-                                    l'année 2025 s'ouvre sur les 1ères parties de DEPORTIVO (Rex-Toulouse), 
-                                    Mouss et Akim (6MIC-Aix-En Provence) et le Off du Printemps de Bourges où le groupe fait un passage remarqué, 
-                                    notamment sur la scène Berry.
+                                    Sur scène, le plaisir se partage. 
+                                    Des chansons qui embarquent dans une bataille sensible, sans jamais lâcher la main. 
+                                    Regards complices, émotion palpable, énergie communicative. 
+                                    Dès les premiers pas, le groupe enchaîne clubs, festivals locaux et premières parties. 
                                 </p>
                                 <p>
-                                    2026 annonce la sortie d'un nouvel EP.
+                                    Accompagné par La Gespe (SMAC - 65) en 2026, le propos s'affirme et un nouvel EP est annoncé.
                                 </p>
                                 <p>
-                                    Faire communion est primordial. Le rock a cette vertu et Rosa<span class="accent">C</span>anine l'incarne à merveille.
+                                    Faire communion est primordial. 
+                                    Le rock a cette vertu. 
+                                    Rosa<span class="accent">C</span>anine l'incarne à merveille.
                                 </p>
                             </div>
                         </div>
@@ -112,22 +119,30 @@
             </section>
 
             <!-- BLOC DATES DE CONCERT (SOUS LA BIO) -->
-            <section class="section-concerts" id="concerts">
-                <div class="titre2">Concerts à venir</div>
-                <div id="concerts-avenir"></div>
 
+            <section class="section-concerts" id="concerts">
+                <div class="titre2">
+                    <span>CONCERTS</span>
+                    <button id="concerts-toggle" class="btn-toggle" aria-label="Afficher les concerts passés">
+                        <svg viewBox="0 0 24 24" class="toggle-icon">
+                            <line x1="12" y1="5" x2="12" y2="19" class="icon-v"></line>
+                            <line x1="5" y1="12" x2="19" y2="12" class="icon-h"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div id="concerts-avenir"></div>
                 <div class="titre2" id="titre-passes" style="display:none; margin-top:30px;">Passés</div>
                 <div id="concerts-passes" style="display:none;"></div>
-                <button class="button-text2" id="concerts-toggle">Concerts passés</button>
             </section>
 
-            <!-- BLOC VIDÉO (EN DESSOUS SUR TOUTE LA LARGEUR DE LA COLONNE) -->
+            <!-- BLOC VIDÉO -->
+
             <section class="section-video" id="videos">
                 <div class="video-wrap">
                     <div class="video-main">
-                        <div class="youtube-facade" data-id="Na1gVEAh3AE">
-                            <img src="https://i.ytimg.com/vi/Na1gVEAh3AE/hqdefault.jpg" 
-                                 alt="Teaser Rosacanine — Cliquez pour lire la vidéo"
+                        <div class="youtube-facade" data-id="xeBsfkXbw5A">
+                            <img src="images/photos/miniatureyt.png" 
+                                 alt="Rosacanine — Cliquez pour lire la vidéo"
                                  width="480" height="360"
                                  loading="lazy">
                             <svg class="play-btn" viewBox="0 0 68 48">
@@ -138,14 +153,12 @@
                     </div>
                 </div>
             </section>
-
         </div>
 
         <!-- ═══════════════ COLONNE DROITE / STICKY (1/3 DE LA PAGE) ═══════════════ -->
+
         <aside class="sidebar-column" id="musique">
             <div class="sticky-player">
-                <div class="titre3">Nouvel EP "UNE PLACE"</div>
-                
                 <div class="player">
                     <div class="cover">
                         <img src="https://rosacanine.github.io/data/images/photos/RC-pochette-2em.png" alt="Pochette EP Une Place - Rosacanine">
@@ -173,7 +186,7 @@
     <!-- ═══════════════ FOOTER ═══════════════ -->
     <footer class="footer">
         <div class="wrap">
-            <span class="copyright">Copyright © 2023–2026 RosaCanine</span>
+            <span class="copyright">Copyright © 2023–2026 Rosa<span class="accent">C</span>anine — Tous droits réservés</span>
         </div>
     </footer>
 

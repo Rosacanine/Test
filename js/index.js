@@ -128,6 +128,38 @@ if (concertsToggle && concertsPassesDiv) {
         }
     });
 }
+    // Fonction universelle pour afficher la liste des concerts dans tes divs
+function afficherConcerts(elementId, listeConcerts) {
+    var container = document.getElementById(elementId);
+    if (!container || !Array.isArray(listeConcerts)) return;
+
+    container.innerHTML = ''; // Vide le conteneur
+
+    listeConcerts.forEach(function (c) {
+        var concertDiv = document.createElement('div');
+        concertDiv.className = 'concert';
+
+        concertDiv.innerHTML = 
+            '<time>' + (c.date || c.Date) + '</time>' +
+            '<span class="sep">/</span>' +
+            '<span class="lieu">' + (c.lieu || c.Lieu) + '</span>' +
+            '<span class="sep">/</span>' +
+            '<span class="ville">' + (c.ville || c.Ville) + '</span>';
+
+        container.appendChild(concertDiv);
+    });
+}
+
+// Appel au chargement de la page
+document.addEventListener('DOMContentLoaded', function () {
+    // Vérifie si les variables de ton repo distant sont chargées
+    if (typeof concertsAvenir !== 'undefined') {
+        afficherConcerts('concerts-avenir', concertsAvenir);
+    }
+    if (typeof concertsPasses !== 'undefined') {
+        afficherConcerts('concerts-passes', concertsPasses);
+    }
+});
 
     // ─── LECTEUR AUDIO ───
     var playerAudio = document.querySelector('.player audio');

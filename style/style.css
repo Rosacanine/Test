@@ -570,10 +570,9 @@ a:hover {
         margin-right: 6px;
     }
 
-    .sep-icon {
-        width: 6px;
-        height: 6px;
-        margin: 0 5px;
+    .concert .sep-icon,
+    .concert .sep {
+        display: none !important;
     }
 
     .footer {

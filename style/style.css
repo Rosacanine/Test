@@ -34,7 +34,7 @@ body {
     background-color: var(--noir);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    padding-top: 170px; /* Ajustez cette valeur selon la hauteur réelle de votre header */
+    padding-top: 170px;
 }
 
 img {
@@ -53,13 +53,13 @@ a:hover {
     opacity: 0.8;
 }
 
-/* ─── HEADER NORMAL ─── */
+/* ─── HEADER FIXE ─── */
 .header {
-    position: fixed;   /* Fixe le header par-dessus le contenu */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;       /* Prend toute la largeur de l'écran */
-    z-index: 1000;     /* Reste au-dessus de tout le reste des éléments */
+    width: 100%;
+    z-index: 1000;
     background-color: var(--noir);
     padding: 15px 0 10px 0;
     text-align: center;
@@ -113,7 +113,7 @@ a:hover {
 }
 
 .main-column {
-    flex: 2; /* 2/3 de la largeur */
+    flex: 2;
     min-width: 0;
     display: flex;
     flex-direction: column;
@@ -121,7 +121,7 @@ a:hover {
 }
 
 .sidebar-column {
-    flex: 1; /* 1/3 de la largeur */
+    flex: 1;
     min-width: 280px;
     max-width: 360px;
 }
@@ -130,7 +130,7 @@ a:hover {
 .sticky-player {
     position: -webkit-sticky;
     position: sticky;
-    top: 200px; /* Décale l'arrêt du lecteur sous le header fixe (ajuster si besoin) */
+    top: 200px;
 }
 
 /* ═══════════════════════════════════════════
@@ -144,7 +144,7 @@ a:hover {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: flex-start;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--rose);
 }
@@ -157,8 +157,8 @@ a:hover {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centre le texte ET le bouton ensemble */
-    gap: 12px; /* Espacement entre le mot CONCERTS et le bouton + */
+    justify-content: center;
+    gap: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--rose);
 }
@@ -239,6 +239,11 @@ a:hover {
     opacity: 0;
 }
 
+/* --- AFFICHAGE BIOGRAPHIE PAR DÉFAUT (ORDINATEUR) --- */
+#bio-toggle {
+    display: none; /* Le bouton '+' est masqué sur ordinateur */
+}
+
 .bio-content p {
     font-size: 1.2rem;
     line-height: 1.7;
@@ -247,11 +252,7 @@ a:hover {
 }
 
 .bio-suite {
-    display: none;
-}
-
-.bio-suite.visible {
-    display: block;
+    display: block; /* La bio est affichée entièrement par défaut sur ordinateur */
 }
 
 /* ═══════════════════════════════════════════
@@ -434,16 +435,14 @@ a:hover {
 }
 
 .concert .sep {
-    color: var(--rose);
-    margin: 0 4px;
     display: inline-block;
     vertical-align: middle;
 }
 
 .sep-icon {
-    width: 32px;
-    height: 32px;
-    margin: 0 8px;
+    width: 20px;
+    height: 20px;
+    margin: 0px 2px;
     flex: 0 0 auto;
     display: inline-block;
     vertical-align: middle;
@@ -466,7 +465,7 @@ a:hover {
 }
 
 /* ═══════════════════════════════════════════
-   RESPONSIVE TABLETTE
+   RESPONSIVE TABLETTE (<= 992px)
    ═══════════════════════════════════════════ */
 @media (max-width: 992px) {
     .page-container {
@@ -494,16 +493,26 @@ a:hover {
         margin: 0 auto;
     }
 
-    .titre {
-        justify-content: flex-start;
+    /* Le bouton '+' s'affiche uniquement sur tablette / mobile */
+    #bio-toggle {
+        display: inline-flex;
+    }
+
+    /* La suite de la bio est masquée par défaut sur mobile/tablette */
+    .bio-suite {
+        display: none;
+    }
+
+    /* Dépliage au clic via le JS */
+    .bio-suite.visible {
+        display: block;
     }
 }
 
 /* ═══════════════════════════════════════════
-   RESPONSIVE MOBILE
+   RESPONSIVE MOBILE (<= 600px)
    ═══════════════════════════════════════════ */
-
-   @media (max-width: 600px) {
+@media (max-width: 600px) {
 
     .header-logo img {
         height: 50px;
@@ -522,6 +531,7 @@ a:hover {
 
     .titre {
         font-size: 1.7rem;
+        gap: 12px;
     }
     
     .titre2 {
@@ -541,24 +551,21 @@ a:hover {
         justify-content: flex-start;
         text-align: left;
         padding: 10px 4px;
-        gap: 0; /* Géré par les largeurs et marges */
+        gap: 0;
     }
 
-    /* La date prend une largeur fixe à gauche pour tout aligner proprement */
     .concert time {
         font-size: 0.85rem;
-        min-width: 100px; /* Aligne le début des lieux pour toutes les lignes */
+        min-width: 100px;
         flex-shrink: 0;
     }
 
-    /* Le bloc Lieu / Ville démarre immédiatement après et s'aligne à gauche */
     .concert .lieu,
     .concert .ville {
         font-size: 0.85rem;
         text-align: left;
     }
 
-    /* Ajoute un petit espace entre le lieu et la ville */
     .concert .lieu {
         margin-right: 6px;
     }
@@ -573,7 +580,6 @@ a:hover {
         font-size: 0.8rem;
     }
 
-    /* Décale le body pour la taille mobile du header */
     body {
         padding-top: 100px;
     }
@@ -583,7 +589,7 @@ a:hover {
     }
 
     .header-logo img {
-        height: 45px; /* Légèrement réduit pour gagner de la place verticale */
+        height: 45px;
         margin-bottom: 15px;
     }
 

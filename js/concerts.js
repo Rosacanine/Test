@@ -118,7 +118,7 @@ function remplirConcerts(containerId, data) {
       var sep1 = document.createElement('span');
       sep1.className = 'sep';
       // sep1.textContent = '▼';
-      sep1.innerHTML = `<img src="images/logo/icons/tache3.svg" alt="" class="sep-icon">`;
+      sep1.innerHTML = `<img src="images/logo/icons/tiret2.svg" alt="" class="sep-icon">`;
 
       // Lieu
       var lieu = document.createElement('span');
@@ -135,7 +135,7 @@ function remplirConcerts(containerId, data) {
           var sep2 = document.createElement('span');
           sep2.className = 'sep';
         //  sep2.textContent = '▼'; //
-          sep2.innerHTML = `<img src="images/logo/icons/tache3.svg" alt="" class="sep-icon">`;
+          sep2.innerHTML = `<img src="images/logo/icons/tiret2.svg" alt="" class="sep-icon">`;
 
           var ville = document.createElement('span');
           ville.className = 'ville';

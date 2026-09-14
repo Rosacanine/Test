@@ -49,14 +49,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ─── 4. FAÇADE YOUTUBE ───
+    // ─── 4. FAÇADE YOUTUBE ──
+    
     var mainFacade = document.querySelector('.youtube-facade');
     if (mainFacade) {
         mainFacade.addEventListener('click', function () {
             var videoId = this.getAttribute('data-id');
             if (videoId && !this.querySelector('iframe')) {
-                this.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId +
-                    '?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+                var iframe = document.createElement('iframe');
+                iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0');
+                iframe.setAttribute('title', 'YouTube video player');
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+                iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+                iframe.setAttribute('allowfullscreen', 'true');
+                
+                this.innerHTML = '';
+                this.appendChild(iframe);
             }
         });
     }
@@ -105,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var avenir = (typeof concerts_avenir !== 'undefined') ? concerts_avenir : ((typeof concertsAvenir !== 'undefined') ? concertsAvenir : []);
             var passes = (typeof concerts_passes !== 'undefined') ? concerts_passes : ((typeof concertsPasses !== 'undefined') ? concertsPasses : []);
             
-            var sepIcon = '<img class="sep-icon" src="images/logo/icons/tache3.svg" alt="" aria-hidden="true">';
+            var sepIcon = '<img class="sep-icon" src="images/logo/icons/tiret2.svg" alt="" aria-hidden="true">';
 
             function injecter(elementId, liste) {
                 var container = document.getElementById(elementId);

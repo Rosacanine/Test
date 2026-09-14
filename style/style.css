@@ -544,36 +544,46 @@ a:hover {
         line-height: 1.5;
     }
 
-    /* STRUCTURE CONCERT SUR MOBILE */
-    .concert {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        text-align: left;
-        padding: 10px 4px;
-        gap: 0;
-    }
+/* STRUCTURE CONCERT SUR MOBILE — TRONCATURE SUR LA VILLE (...) */
+.concert {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 10px 4px;
+    gap: 10px;
+    min-width: 0; /* Permet aux enfants flex de se rétrécir */
+}
 
-    .concert time {
-        font-size: 0.85rem;
-        min-width: 100px;
-        flex-shrink: 0;
-    }
+.concert time {
+    font-size: 0.85rem;
+    flex: 0 0 auto;
+    text-align: left;
+}
 
-    .concert .lieu,
-    .concert .ville {
-        font-size: 0.85rem;
-        text-align: left;
-    }
+.concert .lieu {
+    font-size: 0.85rem;
+    text-align: left;
+    flex: 0 0 auto; /* Garde la salle affichée en entier */
+    white-space: nowrap;
+    margin-right: 0;
+}
 
-    .concert .lieu {
-        margin-right: 6px;
-    }
+.concert .ville {
+    font-size: 0.85rem;
+    text-align: left;
+    flex: 0 1 auto;        /* Permet à la ville de se réduire si la ligne dépasse */
+    min-width: 0;         /* Autorise la réduction en flexbox */
+    white-space: nowrap;  /* Empêche le retour à la ligne */
+    overflow: hidden;      /* Masque le texte qui dépasse */
+    text-overflow: ellipsis; /* Affiche les '...' */
+}
 
-    .concert .sep-icon,
-    .concert .sep {
-        display: none !important;
-    }
+/* Masque les puces/taches de séparation sur mobile */
+.concert .sep-icon,
+.concert .sep {
+    display: none !important;
+}
 
     .footer {
         font-size: 0.8rem;

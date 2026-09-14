@@ -327,6 +327,25 @@ a:hover {
     border-left: 3px solid var(--rose);
 }
 
+.lien-music {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.lien-music a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.lien-music a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
 /* ═══════════════════════════════════════════
    VIDÉOS
    ═══════════════════════════════════════════ */

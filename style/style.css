@@ -598,11 +598,10 @@ a:hover {
     text-overflow: ellipsis; /* Affiche les '...' */
 }
 
-/* Masque les puces/taches de séparation sur mobile */
-.concert .sep-icon,
-.concert .sep {
-    display: none !important;
-}
+    /* Masquage propre des séparateurs sans impacter la structure flex */
+    .concert .sep-icon {
+        display: none;
+    }
 
     .footer {
         font-size: 0.8rem;
